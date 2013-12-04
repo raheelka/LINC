@@ -3691,7 +3691,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .badge {
 	display: inline-block;
 	min-width: 10px;
-	padding: 3px 7px;
+	padding: 12px 10px;
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 1;
