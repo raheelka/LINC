@@ -32,9 +32,17 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <style>
-#letstry{
-	padding-top:200px;
+#thumbs{
+	padding-top:50px;
 }
+#selectDiv{
+	padding-top:50px;
+}
+
+#countySelect{
+	width:50%;
+}
+
 </style>
 
 <body>
@@ -131,39 +139,51 @@
 					<div class="item">
 						<img alt="" src="img/crowd1.jpg" height="500" width="1200">
 						<div class="carousel-caption">
-							<h4>
+							<h2>
 								NC POPULATION PYRAMID
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</h2>
+							<p class="lead">
+							The distribution of age groups in North Carolina over the last 150 years.
 							</p>
+							<a class="btn btn-large btn-default" href="iframe.html">Read More</a>
 						</div>
 					</div>
 					<div class="item">
 						<img alt="" src="img/heat1.jpg" height="500" width="1200">
 						<div class="carousel-caption">
-							<h4>
+							<h2>
 								ENERGY UTILIZATION BUBBLE
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</h2>
+							<p class="lead">
+								The distribution of energy sources for heating houses across 19 counties in 2010.
 							</p>
+								<a class="btn btn-large btn-default" href="iframe.html">Read More</a>
 						</div>
 					</div>
 					<div class="item active">
 						<img alt="" src="img/farm1.jpg" height="500" width="1200">
 						<div class="carousel-caption">
-							<h4>
+							<h2>
 								FARMLAND MAP
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</h2>
+							<p class="lead">
+							Distribution of farms across North Carolina over the last 10 years.
 							</p>
+								<a class="btn btn-large btn-default" href="iframe.html">Read More</a>
 						</div>
 					</div>
 				</div> <a class="left carousel-control" href="#carousel-105400" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-105400" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
-			<div class="row" id="letstry">
+			<center><div class="selectDiv" id="selectDiv">
+			<select class="form-control" id="countySelect">
+						<option value="All">Select County</option>
+						<option value="All">All</option>
+						<option value="Wake">Wake</option>
+						<option value="Avent">Avent</option>
+						<option value="Gorman">Avery</option>
+			</select></center>
+			</div>
+			<div class="row" id="thumbs">
 				<div class="col-md-4">
 					<div class="thumbnail">
 						<img alt="300x200" src="tiles/education.jpg" width="130" height="130" >
@@ -281,17 +301,33 @@
 			<h3>
 				Popular Stories
 			</h3>
+			<i>
 			<blockquote>
+			
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-				</p> <small>Someone famous <cite>Source Title</cite></small>
+					North Carolina offers one of the nation’s most renowned education systems, supplying companies a pipeline of skilled workers while providing its citizens ample opportunities to learn, grow and Thrive in the 21st century economy.
+				</p>
+				<p align="right">
+					<small>Thrive North Carolina 
+						<cite>Education</cite>
+					</small>	
+				</p>
 			</blockquote>
 		
 			<blockquote>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-				</p> <small>Someone famous <cite>Source Title</cite></small>
+				The United States Census Bureau, as of July 1, 2009, estimated North Carolina's population at 9,380,884 which represents an increase of 1,340,334, or 16.7%, since the last census in 2000.
+				</p>
+			
+			<p align="right">
+					<small>Wikipedia
+						
+						 <cite>Encyclopedia</cite>
+						
+					</small>
+			</p>
 			</blockquote>
+			</i>
 		</div>
 	</div>
 </div>
