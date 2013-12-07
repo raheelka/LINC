@@ -1,0 +1,30 @@
+<chart palette='3' caption='Yr-Rd Housing Units with Steam/Hot Water Heating Equipment'  xaxisname='Year' Yaxisname='Attribute Value' numdivlines='3'  showSum='1' useRoundEdges='1' bgColor='FFFFFF,FFFFFF' showBorder='0' >
+
+    <categories font='Arial' fontSize='12' fontColor='000000'>
+
+        <category label='2010'/>
+
+
+    </categories>
+
+    <dataset>
+
+        <dataSet seriesName='Tank LP Heat for Wake County' color='AFD8F8' showValues='0'>
+
+            <set value='16588' />
+
+
+        </dataSet>
+
+        <dataSet seriesName='Unit Steam Heat for Wake County' color='F6BD0F' showValues='0'>
+
+            <set value='5076' />
+
+      
+
+        </dataSet>
+
+    </dataset>
+
+  
+</chart>

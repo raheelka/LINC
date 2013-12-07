@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/ncdatalinc/bootstrap.css" rel="stylesheet">
+	<link href="../../static/ncdatalinc/bootstrap-multiselect.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	
+	 <script type="text/javascript" src="../../static/ncdatalinc/Charts/FusionCharts.js"></script>
+<script type="text/javascript" src="../../static/ncdatalinc/Charts/FusionCharts.HC.js"></script>
+<script type="text/javascript" src="../../static/ncdatalinc/Charts/FusionCharts.HC.Charts.js"></script>
+<script type="text/javascript" src="../../static/ncdatalinc/Charts/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">LINC</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+   <div class="well">Hello WOrld</div>
+   <div class="container">
+   <div class="well"><h2> Energy and Utilities</h2></div>
+   </div>
+   <div class="container">
+   <div class="row">
+		  <div class="col-md-3"><b>You are seeing</b></div>
+		  <div class="col-md-3"><b>Category</b></div>
+	      <div class="col-md-3"><b>Year(s)</b></div>
+		  <div class="col-md-2"><b>County</b> </div>
+		  <div class="col-md-1"> &nbsp; &nbsp; <b> And</b></div>
+		  
+   </div>
+   </div>
+  
+	   <div class="container">
+      <div class="row">
+	  
+	  <div class="col-md-3">
+			<div class="list-group">
+		<a href="page2.html" class="list-group-item">
+    Energy Production and Consumption
+  </a>
+  <a href="#" class="list-group-item active">Specific Utilities</a>
+</div>
+	  </div>
+      <div class="col-md-3">
+	  <!-- Build your select: -->
+				<select class="multiselect" multiple="multiple" id="category">
+			  <option value="cat1">Yr-Rd Housing Units with Steam/Hot Water Heating Equip</option>
+			  <option value="cat2">Yr-Rd Housing Units w/ Fireplace, Stove, or Rm Heaters</option>
+			</select>
+	  </div>
+	  <div class="col-md-3">
+		<select class="multiselect" multiple="multiple" id="year">
+			  <option value="2010">2010</option>
+			  <option value="2011">2011</option>
+			</select>
+	  </div>
+	  <div class="col-md-2">
+			<select class="multiselect" multiple="multiple" id="county">
+			  <option value="wake">Wake</option>
+			  <option value="greene">Greene</option>  
+			</select>
+	  </div>
+	  <div class="col-md-1">&nbsp; &nbsp; 
+	  <button  type="button" class="btn btn-success showtable">Go</button>
+	 
+	  </div>
+	  </div>
+	  </div>
+	 
+	  <div class="container">
+	  <div class="row">
+	  <div class="col-md-3"> <button type="button" id="graphbutton" class="btn btn-success" onclick="display_graph()">View Graph</button><br><br><button type="button" id="tablebutton" class="btn btn-success showtable">Tabular View</button></div>
+	  <div class="col-md-9">
+	  <div id="chartContainer"></div>   
+	  <div id="chartContainer1"></div> 
+	  <div id="tableContainer"></div>
+	  </div>
+		</div>
+		</div>
+    <script type="text/javascript">
+		
+   
+		function display_graph(){
+		   var myChart = new FusionCharts( "../../static/ncdatalinc/Charts/MSStackedColumn2D.swf", 
+                    "myChartId", "700", "600", "0" );
+					var myChart1 = new FusionCharts( "../../static/ncdatalinc/Charts/MSStackedColumn2D.swf", 
+                    "myChartId", "700", "600", "0" );
+		var category_selection = document.getElementById("category").options;
+		var year_selection = document.getElementById("year").options;
+		var county_selection = document.getElementById("county").options;
+		$( "#chartContainer" ).empty();
+		$( "#chartContainer1" ).empty();
+		$('#tableContainer').empty();
+		
+		if(category_selection[0].selected)
+		{
+			if(year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data1.xml");
+			else if(year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart.setXMLUrl("data2.1.xml");
+			else if(year_selection[0].selected && year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data2.2.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data3.1.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data3.2.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart.setXMLUrl("data4.1.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data4.2.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart.setXMLUrl("data4.3.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart.setXMLUrl("data4.4.xml");
+			myChart.render("chartContainer"); 
+		}
+		if(category_selection[1].selected)
+		{
+			if(year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_1.xml");
+			else if(year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_2.1.xml");
+			else if(year_selection[0].selected && year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_2.2.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_3.1.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_3.2.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_4.1.xml");
+			else if(year_selection[0].selected && !year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_4.2.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && county_selection[0].selected && !county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_4.3.xml");
+			else if(!year_selection[0].selected && year_selection[1].selected && !county_selection[0].selected && county_selection[1].selected)
+			myChart1.setXMLUrl("datacat2_4.4.xml");
+			
+			myChart1.render("chartContainer1");  
+		}
+     // myChart.setXMLUrl("datacat2_4.4.xml");
+
+          
+
+		}
+     
+    </script>   
+	 
+   <script>
+   $('.showtable').click(function(){
+   
+		$( "#chartContainer" ).empty();
+		$( "#chartContainer1" ).empty();
+		$('#tableContainer').empty();
+		$('#graphbutton').show();
+		$('#tablebutton').show();
+		
+		var category_selection = document.getElementById("category").options;
+		var year_selection = document.getElementById("year").options;
+		var county_selection = document.getElementById("county").options;
+			var data_array = [
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2010", "county":"Wake", "name":"Tank LP Heat","value":"16588"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2010", "county":"Wake", "name":"Unit Steam Heat","value":"5076"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2011", "county":"Wake", "name":"Tank LP Heat","value":"15384"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2011", "county":"Wake", "name":"Unit Steam Heat","value":"3890"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2010", "county":"Greene", "name":"Tank LP Heat","value":"18075"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2010", "county":"Greene", "name":"Unit Steam Heat","value":"3048"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2011", "county":"Greene", "name":"Tank LP Heat","value":"16387"},
+			{"category": "Yr-Rd Housing Units with Steam/Hot Water Heating Equipment", "year": "2011", "county":"Greene", "name":"Unit Steam Heat","value":"4990"},
+			{"category": "Yr-Rd Housing Units with Fireplace, Stove or Rm Heaters", "year":"2010", "county":"Wake" , "name":"Fire Room Heat","value":"17948"},	
+			{"category": "Yr-Rd Housing Units with Fireplace, Stove or Rm Heaters", "year":"2011", "county":"Wake" , "name":"Fire Room Heat","value":"18287"},	
+			{"category": "Yr-Rd Housing Units with Fireplace, Stove or Rm Heaters", "year":"2010", "county":"Greene" , "name":"Fire Room Heat","value":"15196"},	
+			{"category": "Yr-Rd Housing Units with Fireplace, Stove or Rm Heaters", "year":"2011", "county":"Greene" , "name":"Fire Room Heat","value":"16545"}
+			];
+			
+			var rows_to_take = [0,0,0,0,0,0,0,0,0,0,0,0];
+			if(category_selection[0].selected && year_selection[0].selected && county_selection[0].selected)
+			{
+				rows_to_take[0]=1;
+				rows_to_take[1]=1;
+			}
+			if(category_selection[0].selected && year_selection[1].selected && county_selection[0].selected)
+			{
+				rows_to_take[2]=1;
+				rows_to_take[3]=1;
+			}
+			if(category_selection[0].selected && year_selection[0].selected && county_selection[1].selected)
+			{
+				rows_to_take[4]=1;
+				rows_to_take[5]=1;
+			}
+			if(category_selection[0].selected && year_selection[1].selected && county_selection[1].selected)
+			{
+				rows_to_take[6]=1;
+				rows_to_take[7]=1;
+			}
+			if(category_selection[1].selected && year_selection[0].selected && county_selection[0].selected)
+			{
+				rows_to_take[8]=1;
+			}
+			if(category_selection[1].selected && year_selection[1].selected && county_selection[0].selected)
+			{
+				rows_to_take[9]=1;
+			}
+			if(category_selection[1].selected && year_selection[0].selected && county_selection[1].selected)
+			{
+				rows_to_take[10]=1;
+			}
+			if(category_selection[1].selected && year_selection[1].selected && county_selection[1].selected)
+			{
+				rows_to_take[11]=1;
+			}
+			
+			var thead = "<table class='table' border='1'><th> Category</th><th>Year</th><th>County</th><th>Property</th><th>Value</th>";
+			var tbody='';
+			for(var i=0; i<data_array.length ; i++)
+			{
+			
+				if(rows_to_take[i]==1)
+				{
+				tbody += "<tr>";
+				tbody += "<td>";
+				tbody += data_array[i].category;
+				tbody += "</td>";
+				tbody += "<td>";
+				tbody += data_array[i].year;
+				tbody += "</td>";
+				tbody += "<td>";
+				tbody += data_array[i].county;
+				tbody += "</td>";
+				tbody += "<td>";
+				tbody += data_array[i].name;
+				tbody += "</td>";
+				
+				if(parseInt(data_array[i].value)<6000)
+				tbody += "<td bgcolor='yellow'>";
+				else 
+				tbody += "<td bgcolor='orange'>";
+				tbody += data_array[i].value;
+				tbody += "</td>";
+				tbody += "</tr>";
+				}
+			}
+			var tfooter = "</table>";
+			var legend = "<div><b>Legend</b><table><tr><td bgcolor='yellow'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> Heat Production less than 6000</td></tr><tr><td bgcolor='orange'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> Heat Production greater than 6000</td></tr></table></div>";
+			document.getElementById('tableContainer').innerHTML = thead + tbody + tfooter+ legend;
+		
+		});
+   </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../static/ncdatalinc/bootstrap.min.js"></script>
+	<script src="../../static/ncdatalinc/bootstrap-multiselect.js"></script>
+	
+	
+	<!-- Initialize the plugin: -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.multiselect').multiselect({
+	buttonWidth: '200px'
+	});
+	
+	$('#graphbutton').hide();
+	$('#tablebutton').hide();
+  });
+</script>
+
+  </body>
+</html>

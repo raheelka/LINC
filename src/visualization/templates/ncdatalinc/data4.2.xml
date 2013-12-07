@@ -1,0 +1,33 @@
+<chart palette='3' caption='Yr-Rd Housing Units with Steam/Hot Water Heating Equipment'  xaxisname='Year' Yaxisname='Attribute Value' numdivlines='3'  showSum='1' useRoundEdges='1' bgColor='FFFFFF,FFFFFF' showBorder='0' >
+
+    <categories font='Arial' fontSize='12' fontColor='000000'>
+
+        <category label='2010'/>
+
+        
+
+    </categories>
+
+    
+
+    <dataSet>
+
+        <dataset seriesname='Tank LP Heat for Greene County' color='8BBA00'  showValues='0'>
+
+            <set value='18075' />
+
+      
+      
+
+        </dataset>
+
+        <dataset seriesname='Unit Steam Heat for Greene County' color='A66EDD'  showValues='0'>
+
+            <set value='3048' />
+
+
+        </dataset>
+
+            </dataSet>
+
+</chart>

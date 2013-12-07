@@ -1,0 +1,38 @@
+<chart palette='3' caption='Yr-Rd Housing Units with Fireplace, Stove or Rm Heaters'  xaxisname='Year' Yaxisname='Attribute Value' numdivlines='3'  showSum='1' useRoundEdges='1' bgColor='FFFFFF,FFFFFF' showBorder='0' >
+
+    <categories font='Arial' fontSize='12' fontColor='000000'>
+
+        <category label='2010'/>
+
+        <category label='2011'/>
+
+    </categories>
+
+    <dataset>
+
+        <dataSet seriesName='Fire Room Heat for Wake County' color='AFD8F8' showValues='0'>
+
+            <set value='17948' />
+
+            <set value='18287' />
+
+        </dataSet>
+
+       
+    </dataset>
+
+    <dataSet>
+
+        <dataset seriesname='Fire Room Heat for Greene County' color='8BBA00'  showValues='0'>
+
+            <set value='15196' />
+
+            <set value='16545' />
+      
+
+        </dataset>
+
+        
+            </dataSet>
+
+</chart>
