@@ -67,7 +67,7 @@ right: 20%;
 }
 
 
-p{
+#bubbledesc{
 width: 400px;
 height: 150px;
 border: 0px;
@@ -84,6 +84,11 @@ left : 900px;
 
 }
 
+/* Block Quotes*/
+#blockquotes{
+	position: absolute;
+	top:1150px ;
+}
 
 </style>
 
@@ -207,9 +212,67 @@ left : 900px;
 </div>	
 	
 <h1> Energy and Utilities Bubble</h1>
-<p> This bubble chart shows the distribution of energy sources for heating occupied housing units across 19 counties in North Carolina for the year 2010. Each county is represented by a different color. Each has a label to depict the enery source it represents. The energy source may be Gas, Tank LP, Electricity, Fuel oil, other fuel, or no heating fuel. The size of the bubble changes based on how much housing units use that particular source of energy for heating. The color of the bubble varies according to the county it represents.</p>
+<p id="bubbledesc"> This bubble chart shows the distribution of energy sources for heating occupied housing units across 19 counties in North Carolina for the year 2010. Each county is represented by a different color. Each has a label to depict the enery source it represents. The energy source may be Gas, Tank LP, Electricity, Fuel oil, other fuel, or no heating fuel. The size of the bubble changes based on how much housing units use that particular source of energy for heating. The color of the bubble varies according to the county it represents.</p>
 <img class="bubblekey" src="../img/bubbles.jpg" alt="Key" title ="Key">
 <script src="../js/d3.v3.min.js"></script>
+
+
+<div id="blockquotes">
+	
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3>Energy Facts</h3>
+	<blockquote>
+		<p>
+It is estimated that, with pro-development policies for offshore development, the North Carolina oil and gas industry could generate more than $3.5 billion in government revenue by 2030.
+
+			<small>Wood Mackenzie
+			</small>
+			</p>
+	
+	</blockquote>
+	
+	<blockquote>
+		<p>
+	The oil and gas industry in North America today supports over 146,000 jobs and contributes more than $12.4 billion to the state's economy, representing 3% of the state's GDP.
+
+			<small>NC Energy Forum
+			</small>
+			</p>
+	
+	</blockquote>
+	
+	<blockquote>
+		<p>
+Produces more than $3 billion in total government revenue. (Source: American Petroleum Institute).
+	
+			<small>American Petroleum Institute
+			</small>
+			</p>
+	
+	</blockquote>
+	
+	<!--Footer-->
+	<div class="well well-sm">
+		© 2013 Log Into North Carolina
+		 <center>
+			<a href="" data-target="#aboutUsModal" data-toggle="modal"> About Us </a> 
+			|<a href="" data-target="#helpModal" data-toggle="modal"> Help </a> 
+			| <a href="#"> Privacy Statement </a> 
+			| <a href="#"> Terms of Use</a> 
+		</center>
+	</div>
+	<!--Footer ends here-->
+	
+	
+	
+	
+	</div>
+	</div>
+	</div>
+</div>
+
 <div class="bubble">
 <script>
 
@@ -281,17 +344,13 @@ d3.select(self.frameElement).style("height", diameter + "px");
        
 		<h2>Getting Started</h2>
 
-		Get reports from LINC in one of three ways:<br/><br/>
-
-		    Topic Report--choose this option if you want to get key data items by subject in a preformatted report for a county or the state.<br/><br/>
-		    Custom Report--choose this option if you want to get selected data items for any of the available geographic areas. LINC will determine the appropriate report formats based on your selections.<br/><br/>
-
-		    If you select a county, also clicking the first option box under the Counties category will retrieve data for the county, its municipalities (or municipal parts, if appropriate), county balance, townships, and tracts, depending upon which areas have data for the data item(s) you request. Township and tract data are available only for 1990 decennial census items and county balance only for population counts and estimates. Selecting a multi-county region under the Regions category will return data for the individual component counties and region totals.<br/><br/>
-
-		    Click in the gray frame to the right, then press the control and F keys simultaneously to invoke the find function of your browser if you want to search for a specific geographic name.<br/><br/>
-		    One-Step Search--choose this option if you are an experienced LINC user. You will need to know the appropriate geographic and data item codes to enter.<br/><br/>
-
-		Follow any instructions that may appear in alert boxes.
+			Getting reports from LINC: <br/> <br/>
+			1.	Category Report: Choose a category from the tiles on the home page. You can find the specific data for a county from a particular year by making appropriate selections. You can select multiple counties and years as well.<br/>
+			View Graph: Choose this option if you want to view the data as a graph.<br/>
+			Tabular View: Choose this option if you want to view the data in a table. <br/><br/>
+			2.	User Stories: Click on the Read More button on a user story to get all data items related to that particular user story. <br/> <br/> 
+			3.	Interesting Facts: You can view the interesting facts about a category and can click on Read More button to get more interesting facts about that category.
+	
 
       </div>
       <div class="modal-footer">
