@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Energy</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../css/bootstrap.css" rel="stylesheet">
@@ -34,6 +34,7 @@
 	<script type="text/javascript" src="../../static/ncdatalinc/Charts/FusionCharts.HC.Charts.js"></script>
 	<script type="text/javascript" src="../../static/ncdatalinc/Charts/jquery.min.js"></script>
 	<script type="text/javascript" src="exportTable.js"></script>
+	
 
   </head>
 
@@ -219,7 +220,7 @@
 			</select>
 	  </div>
 	  <div class="col-md-1">&nbsp; &nbsp; 
-	  <button  type="button" class="btn btn-success showtable">Go</button>
+	  <button id="goButton" type="button" class="btn btn-success showtable">Go</button>
 	 
 	  </div>
 	  </div>
@@ -227,9 +228,12 @@
 	 
 	  <div class="container">
 	  <div class="row">
-	  <div class="col-md-3"> <button type="button" id="graphbutton" class="btn btn-success" onclick="display_graph()">View Graph</button><br><br><button type="button" id="tablebutton" class="btn btn-success showtable">Tabular View</button></div>
+	  <div class="col-md-3"> <button type="button" id="graphbutton" class="btn btn-success" onclick="display_graph()">View Graph</button><br><br><button type="button" id="tablebutton" class="btn btn-success showtable">Tabular View</button>
+		<br/><br/><button type="button" id="btnExport" class="btn btn-info showtable">Export Table</button>
+		</div>
+	
 	  <div class="col-md-9">
-		<button type="button" id="btnExport" class="btn btn-default">Export Table</button>
+		
 	  <div id="chartContainer"></div>   
 	  <div id="chartContainer1"></div> 
 	  <div id="tableContainer"></div>
@@ -312,6 +316,7 @@
 		$('#tableContainer').empty();
 		$('#graphbutton').show();
 		$('#tablebutton').show();
+		$('#btnExport').show();
 		
 		var category_selection = document.getElementById("category").options;
 		var year_selection = document.getElementById("year").options;
@@ -423,6 +428,7 @@
 	
 	$('#graphbutton').hide();
 	$('#tablebutton').hide();
+	$('#btnExport').hide();
   });
 </script>
 
